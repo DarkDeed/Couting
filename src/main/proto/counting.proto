@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.example;
+
+message sendNumbers
+{
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+
+message responseNumber
+{
+  int32 responseValue = 1;
+}
+
+service counting
+{
+  rpc countingNumbers(sendNumbers) returns (stream responseNumber);
+}
